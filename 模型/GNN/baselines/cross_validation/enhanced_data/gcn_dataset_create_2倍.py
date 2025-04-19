@@ -365,7 +365,7 @@ if __name__ == '__main__':
                         language='zh')
     file_names = ['2倍/enhanced_complex_sentence.txt']
 
-    bug_save_file = open('2倍/bug.txt', mode='a', encoding='utf-8')
+    bug_save_file = open('2倍数据增强/before_shuffle/bug.txt', mode='a', encoding='utf-8')
 
     for file_name in file_names:
         mat_list = []
@@ -438,8 +438,8 @@ if __name__ == '__main__':
                 if len(edge_index_source) > 150:
                     continue
 
-                bert_tokenizer = BertTokenizer.from_pretrained('../../../../../downloaded_models/mc_bert_tokenizer')
-                pretrained_model = BertModel.from_pretrained('../../../../../downloaded_models/mc_bert_model')
+                bert_tokenizer = BertTokenizer.from_pretrained('../../../../downloaded_models/mc_bert_tokenizer')
+                pretrained_model = BertModel.from_pretrained('../../../../downloaded_models/mc_bert_model')
 
                 data_sentence_c = bert_tokenizer.batch_encode_plus(amr_seq,
                                                               max_length=max_length,
@@ -486,13 +486,13 @@ if __name__ == '__main__':
                 amr_seq_list.append(amr_seq)
                 node_pads_list.append(node_pads)
 
-                with open('2倍/mat_list.pkl', mode='wb') as file_1:
+                with open('2倍数据增强/before_shuffle/mat_list.pkl', mode='wb') as file_1:
                     pickle.dump(mat_list, file_1)
-                with open('2倍/edge_index_list.pkl', mode='wb') as file_2:
+                with open('2倍数据增强/before_shuffle/edge_index_list.pkl', mode='wb') as file_2:
                     pickle.dump(edge_index_list, file_2)
-                with open('2倍/amr_seq_list.pkl', mode='wb') as file_3:
+                with open('2倍数据增强/before_shuffle/amr_seq_list.pkl', mode='wb') as file_3:
                     pickle.dump(amr_seq_list, file_3)
-                with open('2倍/node_pad_list.pkl', mode='wb') as file_1:
+                with open('2倍数据增强/before_shuffle/node_pad_list.pkl', mode='wb') as file_1:
                     pickle.dump(node_pads_list, file_1)
             except:
                 bug_save_file.write(str(index) + '\n')
