@@ -70,21 +70,21 @@ for index in shuffled_index:
     complex_sentence_list.append(complex_sentence)
     simple_sentence_list.append(simple_sentence)
 
-with open('shuffle/amr_seq_list.pkl', mode='wb') as file:
+with open('../shuffle/amr_seq_list.pkl', mode='wb') as file:
     pickle.dump(new_amr_seq_list, file)
 
-with open('shuffle/edge_index_list.pkl', mode='wb') as file:
+with open('../shuffle/edge_index_list.pkl', mode='wb') as file:
     pickle.dump(new_edge_index_list, file)
 
-with open('shuffle/mat_list.pkl', mode='wb') as file:
+with open('../shuffle/mat_list.pkl', mode='wb') as file:
     pickle.dump(new_mat_list, file)
 
-with open('shuffle/node_pad_list.pkl', mode='wb') as file:
+with open('../shuffle/node_pad_list.pkl', mode='wb') as file:
     pickle.dump(new_node_pad_list, file)
 
-with open('shuffle/complex_sentence_list.pkl', mode='wb') as file:
+with open('../shuffle/complex_sentence_list.pkl', mode='wb') as file:
     pickle.dump(complex_sentence_list, file)
 
-with open('shuffle/simple_sentence_list.pkl', mode='wb') as file:
+with open('../shuffle/simple_sentence_list.pkl', mode='wb') as file:
     pickle.dump(simple_sentence_list, file)
 
